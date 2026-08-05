@@ -1,0 +1,41 @@
+{
+  "name": "spanish-commit-button",
+  "displayName": "Spanish Commit Button",
+  "description": "Genera mensajes de commit en español con Cerebras.",
+  "version": "0.0.11",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.132.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:spanishCommit.generate"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "spanishCommit.generate",
+        "title": "Generar commit en español",
+        "icon": "$(sparkle)"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "spanishCommit.generate",
+        "key": "ctrl+alt+g"
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "spanishCommit.generate",
+          "when": "scmProvider == git",
+          "group": "navigation"
+        }
+      ]
+    }
+  }
+}

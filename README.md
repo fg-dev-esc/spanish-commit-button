@@ -33,19 +33,19 @@ __/\\\\\\\\\\\\\____/\\\________/\\\__/\\\\\\\\\\\\\\\__/\\\\\\\\\\\\\\\_______/
 # Spanish Commit Button
 
 ![VS Code](https://img.shields.io/badge/VS%20Code-1.132%2B-007ACC?logo=visualstudiocode&logoColor=white)
-![Cerebras](https://img.shields.io/badge/IA-Cerebras-fb5b1f)
+![Groq](https://img.shields.io/badge/IA-Groq-f55036)
 ![JavaScript](https://img.shields.io/badge/JavaScript-Node.js-f7df1e?logo=javascript&logoColor=black)
-![Versión](https://img.shields.io/badge/versión-0.0.11-blue)
+![Versión](https://img.shields.io/badge/versión-0.0.12-blue)
 ![GitHub stars](https://img.shields.io/github/stars/fg-dev-esc/spanish-commit-button)
 
-Extensión mínima de VS Code que genera mensajes de commit en español con Cerebras.
+Extensión mínima de VS Code que genera mensajes de commit en español con Groq.
 
 ## Configuración
 
-Define la API key como variable de entorno y reinicia completamente VS Code:
+Define `GROQ_API_KEY` como variable de entorno y reinicia completamente VS Code:
 
 ```powershell
-[Environment]::SetEnvironmentVariable("CEREBRAS_API_KEY", "tu-api-key", "User")
+[Environment]::SetEnvironmentVariable("GROQ_API_KEY", "tu-api-key", "User")
 ```
 
 ## Uso

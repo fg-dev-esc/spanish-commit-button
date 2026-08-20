@@ -29,10 +29,10 @@ async function activate(context) {
 
 async function generateCommit() {
   try {
-    const apiKey = process.env.CEREBRAS_API_KEY;
+    const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) {
       throw new Error(
-        "Configura la variable CEREBRAS_API_KEY y reinicia VS Code."
+        "Configura la variable GROQ_API_KEY y reinicia VS Code."
       );
     }
 
@@ -114,14 +114,14 @@ async function generateCommit() {
       throw new Error("No hay cambios para generar el commit.");
     }
 
-    const response = await fetch("https://api.cerebras.ai/v1/chat/completions", {
+    const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
       method: "POST",
       headers: {
         Authorization: `Bearer ${apiKey}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "gpt-oss-120b",
+        model: "openai/gpt-oss-20b",
         stream: false,
         max_tokens: 1000,
         temperature: 1,
@@ -145,13 +145,13 @@ async function generateCommit() {
       throw new Error(
         body.error?.message ||
           body.message ||
-          `Cerebras respondió ${response.status}: ${JSON.stringify(body)}`
+          `Groq respondió ${response.status}: ${JSON.stringify(body)}`
       );
     }
 
     const message = body.choices?.[0]?.message?.content?.trim();
     if (!message) {
-      throw new Error("Cerebras no devolvió un mensaje.");
+      throw new Error("Groq no devolvió un mensaje.");
     }
 
     repository.inputBox.value = message.replace(/^['"]|['"]$/g, "");

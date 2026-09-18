@@ -2,7 +2,7 @@
   "name": "spanish-commit-button",
   "displayName": "Spanish Commit Button",
   "description": "Genera mensajes de commit en español con Groq.",
-  "version": "0.0.13",
+  "version": "0.0.20",
   "publisher": "local",
   "engines": {
     "vscode": "^1.132.0"
@@ -36,6 +36,10 @@
       {
         "command": "spanishCommit.generate",
         "key": "ctrl+alt+g"
+      },
+      {
+        "command": "spanishCommit.bumpVersion",
+        "key": "ctrl+alt+p"
       }
     ],
     "menus": {

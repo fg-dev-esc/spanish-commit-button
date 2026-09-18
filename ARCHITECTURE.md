@@ -8,7 +8,7 @@ Extension de VS Code que obtiene los cambios de un repositorio Git, los envia a 
 
 - Extension host de VS Code: `extension.js`.
 - Git: extension integrada de VS Code y ejecutable `git`.
-- IA: Groq mediante `GROQ_API_KEY` local y el modelo `openai/gpt-oss-20b`.
+- IA: Groq mediante `GROQ_API_KEY` local y el modelo `qwen/qwen3.8-27b`.
 - Persistencia: ninguna fuera del input de Source Control.
 
 ## Non-goals

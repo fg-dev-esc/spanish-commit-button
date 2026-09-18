@@ -2,7 +2,7 @@
   "name": "spanish-commit-button",
   "displayName": "Spanish Commit Button",
   "description": "Genera mensajes de commit en español con Groq.",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "publisher": "local",
   "engines": {
     "vscode": "^1.132.0"
@@ -11,7 +11,8 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:spanishCommit.generate"
+    "onCommand:spanishCommit.generate",
+    "onCommand:spanishCommit.bumpVersion"
   ],
   "main": "./extension.js",
   "scripts": {
@@ -24,6 +25,11 @@
         "command": "spanishCommit.generate",
         "title": "Generar commit en español",
         "icon": "$(sparkle)"
+      },
+      {
+        "command": "spanishCommit.bumpVersion",
+        "title": "Subir versión de package.json",
+        "icon": "$(versions)"
       }
     ],
     "keybindings": [
@@ -36,6 +42,11 @@
       "scm/title": [
         {
           "command": "spanishCommit.generate",
+          "when": "scmProvider == git",
+          "group": "navigation"
+        },
+        {
+          "command": "spanishCommit.bumpVersion",
           "when": "scmProvider == git",
           "group": "navigation"
         }
